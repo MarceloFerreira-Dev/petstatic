@@ -40,7 +40,7 @@ $(document).ready(function(){
 
         var selectPet = $(this).attr("data-name");
       
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+selectPet+"&api_key=dc6zaTOxFJmzC&&limit=20";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+selectPet+"&api_key=ZHCjtfkN29GwTXYBKfJmchoF7dzq5Gex&limit=20";
 
     $.ajax({
       url: queryURL,
