@@ -52,25 +52,27 @@ $(document).ready(function(){
       
     for (var i = 0; i < response.data.length; i++) {
 
-        var imageUrl = response.data[i].images.fixed_height.url;
-        var still  = response.data[i].images.fixed_height.url;
-        var anime = response.data[i].images.fixed_height.url;
-        var rate = response.data[i].rating;
-        var div = document.createElement("div");
-        var t = document.createTextNode("Rating: " + rate);
-        div.appendChild(t);
-        document.getElementById("images").appendChild(div);
-        $( "div" ).last().attr( "id","galleryID"+ i);
-        $( "div" ).last().addClass( "gallery");
-        // Creating and storing an image tag
-        var petImage = $("<img>");
-        // Setting the petImage src attribute to imageUrl
-        petImage.addClass("img-animate");
-        petImage.attr("src", imageUrl);
-        petImage.attr("data-state", "animate");
-        petImage.attr("alt", "pet image");
-        $(petImage).appendTo( "#galleryID" + i );
-        console.log(petImage);
+      var imageUrl = response.data[i].images.fixed_height_still.url;
+      var still  = response.data[i].images.fixed_height.url;
+      var anime = response.data[i].images.fixed_height.url;
+      var rate = response.data[i].rating;
+      var div = document.createElement("div");
+      var t = document.createTextNode("Rating: " + rate);
+      div.appendChild(t);
+      document.getElementById("images").appendChild(div);
+      $( "div" ).last().attr( "id","galleryID"+ i);
+      $( "div" ).last().addClass( "gallery");
+      // Creating and storing an image tag
+      var petImage = $("<img>");
+      // Setting the petImage src attribute to imageUrl
+      petImage.addClass("img-animate");
+      petImage.attr("src", imageUrl);
+      petImage.attr("data-state", "still");
+      petImage.attr("alt", "pet image");
+      $(petImage).appendTo( "#galleryID" + i );
+      console.log(petImage);
+        
+        console.log(imageUrl);
     };
 
     $(".img-animate").on("click", function() {
